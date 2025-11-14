@@ -550,8 +550,11 @@ section {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .tech-item {
@@ -568,6 +571,28 @@ section {
 .tech-item:hover {
     background: rgba(0, 255, 255, 0.2);
     transform: translateY(-2px);
+}
+
+/* Responsive design para tech-grid */
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        gap: 0.6rem;
+    }
+    
+    .tech-item {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* Portfolio */
@@ -650,6 +675,34 @@ section {
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
+}
+
+.portfolio-link {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-link {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-item[onclick] {
+    transition: all 0.3s ease;
+}
+
+.portfolio-item[onclick]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
 }
 
 /* Proceso */
