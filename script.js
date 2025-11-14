@@ -226,112 +226,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Manejo del formulario de contacto con Formspree
+    // Manejo del formulario de contacto
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envío del formulario
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            // Cambiar botón a estado de carga
             submitBtn.innerHTML = '<span>Enviando...</span><div class="loading"></div>';
             submitBtn.disabled = true;
 
-            // Crear FormData para envío
-            const formData = new FormData(this);
-            
-            // Enviar formulario a Formspree
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Éxito: mostrar mensaje y resetear formulario
-                    showNotification('¡Gracias por tu mensaje! Te responderemos pronto.', 'success');
-                    this.reset();
-                } else {
-                    // Error del servidor
-                    response.json().then(data => {
-                        if (Object.hasOwnProperty.call(data, 'errors')) {
-                            showNotification('Error al enviar el formulario. Por favor, revisa los campos.', 'error');
-                        } else {
-                            showNotification('Error al enviar el formulario. Intenta nuevamente.', 'error');
-                        }
-                    });
-                }
-            })
-            .catch(error => {
-                // Error de red
-                console.error('Error:', error);
-                showNotification('Error de conexión. Por favor, intenta nuevamente.', 'error');
-            })
-            .finally(() => {
-                // Restaurar botón
+            // Simular delay de envío
+            setTimeout(() => {
+                alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+                this.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            });
-            
-            e.preventDefault();
-        });
-    }
-
-    // Función para mostrar notificaciones
-    function showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 25px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            transform: translateX(400px);
-            transition: all 0.3s ease;
-            max-width: 400px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        `;
-        
-        // Colores según el tipo
-        if (type === 'success') {
-            notification.style.background = 'linear-gradient(135deg, #00ff88, #00cc66)';
-        } else if (type === 'error') {
-            notification.style.background = 'linear-gradient(135deg, #ff4757, #ff3742)';
-        } else {
-            notification.style.background = 'linear-gradient(135deg, #00ffff, #0099cc)';
-        }
-        
-        notification.textContent = message;
-        document.body.appendChild(notification);
-        
-        // Animar entrada
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Auto-remover después de 5 segundos
-        setTimeout(() => {
-            notification.style.transform = 'translateX(400px)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 300);
-        }, 5000);
-        
-        // Permitir cerrar manualmente
-        notification.addEventListener('click', () => {
-            notification.style.transform = 'translateX(400px)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 300);
+            }, 2000);
         });
     }
 
