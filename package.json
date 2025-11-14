@@ -1,0 +1,33 @@
+{
+  "name": "bunstack-website",
+  "version": "1.0.0",
+  "description": "Página web moderna para BunStack - Desarrollo web profesional en Chile",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Deploy to GitHub Pages'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/bunstack-website.git"
+  },
+  "keywords": [
+    "website",
+    "chile",
+    "desarrollo-web",
+    "pymes",
+    "responsive",
+    "cyberpunk",
+    "landing-page"
+  ],
+  "author": "BunStack <hola@bunstack.cl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tu-usuario/bunstack-website/issues"
+  },
+  "homepage": "https://tu-usuario.github.io/bunstack-website/",
+  "devDependencies": {},
+  "dependencies": {}
+}
