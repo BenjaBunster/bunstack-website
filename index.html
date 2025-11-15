@@ -426,7 +426,13 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" data-aos="fade-left" id="contactForm">
+                <form class="contact-form" data-aos="fade-left" id="contactForm" action="https://formsubmit.co/bunstackweb@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde BunStack.cl">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://bunstack.cl/#gracias">
+                    
                     <div class="form-group">
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         <label for="nombre">Nombre</label>
