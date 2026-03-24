@@ -508,16 +508,15 @@ const servicesData = {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
         </svg>`,
-        description: 'Mantenimiento completo y soporte técnico profesional para mantener tu sitio web siempre actualizado, seguro y funcionando perfectamente.',
+        description: 'Mantenimiento y soporte técnico profesional para tu sitio web.',
         features: [
             'Cambio de hosting y migración',
             'Modificaciones y actualizaciones web',
-            'Actualizaciones continuas de seguridad',
+            'Actualizaciones de seguridad',
             'Respaldos automáticos diarios',
             'Soporte técnico prioritario',
             'Optimización de velocidad y rendimiento',
-            'Monitoreo 24/7 del sitio',
-            'Certificado SSL incluido'
+            'Monitoreo del sitio',
         ],
         price: 'Desde $149.990/mes'
     },
@@ -528,17 +527,16 @@ const servicesData = {
             <line x1="8" y1="21" x2="16" y2="21"/>
             <line x1="12" y1="17" x2="12" y2="21"/>
         </svg>`,
-        description: 'Páginas de aterrizaje diseñadas estratégicamente para maximizar conversiones y transformar visitantes en clientes potenciales.',
+        description: 'Páginas de aterrizaje diseñadas estratégicamente para conversiones y visitantes de clientes potenciales.',
         features: [
-            'Dominio .cl incluido primer año',
-            'Hosting premium incluido',
-            'Diseño persuasivo y atractivo',
-            'Llamados a la acción efectivos',
+            'Dominio .cl incluido 1 año',
+            'Hosting incluido 1 año',
+            'Diseño persuasivo',
+            'Llamados a la acción',
             'Optimización para conversiones',
             'Botón de WhatsApp integrado',
-            'Formulario de contacto',
-            'Optimización SEO básica',
-            'Responsive 100% móvil'
+            'Optimización SEO',
+            'Responsive 100%'
         ],
         price: 'Desde $249.990'
     },
@@ -548,10 +546,10 @@ const servicesData = {
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="M10 9l5 3-5 3V9z"/>
         </svg>`,
-        description: 'Sitios web profesionales que proyectan la imagen de tu empresa con diseño moderno, funcionalidad completa y presencia digital sólida.',
+        description: 'Sitios web profesionales, funcionalidad completa y presencia digital sólida.',
         features: [
-            'Dominio .cl incluido primer año',
-            'Hosting premium incluido',
+            'Dominio .cl incluido 1 año',
+            'Hosting incluido 1 año',
             'Diseño 100% personalizado',
             'Optimización SEO avanzada',
             'Hasta 5 secciones completas',
@@ -559,7 +557,6 @@ const servicesData = {
             'Integración redes sociales',
             'Galería de imágenes',
             'Mapa de ubicación',
-            'Certificado SSL incluido'
         ],
         price: 'Desde $399.990'
     },
@@ -569,18 +566,16 @@ const servicesData = {
             <path d="M3 3h18v18H3z"/>
             <path d="M9 8l6 4-6 4V8z"/>
         </svg>`,
-        description: 'E-commerce completo y profesional con pasarela de pagos Webpay integrada, gestión de inventario y todas las herramientas para vender online.',
+        description: 'E-commerce profesional con pasarela de pagos, gestión de inventario y todas las herramientas para vender online.',
         features: [
-            'Dominio .cl incluido primer año',
-            'Hosting premium incluido',
-            'Catálogo ilimitado de productos',
-            'Carrito de compras avanzado',
+            'Dominio .cl incluido 1 año',
+            'Hosting incluido 1 año',
+            'Catálogo de productos',
+            'Carrito de compras',
             'Webpay Plus integrado',
-            'Panel administrable intuitivo',
+            'Panel administrable',
             'Gestión de inventario',
-            'Sistema de cupones y descuentos',
-            'Cálculo automático de envíos',
-            'Reportes de ventas',
+            'Botón de WhatsApp integrado',
             'Integración con redes sociales',
             'SEO optimizado'
         ],
