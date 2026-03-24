@@ -17,7 +17,8 @@ EmailJS es un servicio GRATUITO que permite enviar emails directamente desde Jav
 3. Selecciona **"Gmail"** (o el proveedor que uses)
 4. Sigue las instrucciones para conectar tu cuenta bunstackweb@gmail.com
 5. Dale un nombre al servicio (ejemplo: "BunStack Gmail")
-6. **IMPORTANTE:** Anota el **Service ID** que aparece (ejemplo: service_abc123)
+6. **IMPORTANTE:** Anota el **Service ID** que aparece (ejemplo: service_abc123) 
+
 
 ### 3. Crear plantilla de email
 1. Ve a **"Email Templates"** en el menú lateral
