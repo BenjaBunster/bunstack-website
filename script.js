@@ -554,6 +554,7 @@ const servicesData = {
             'Optimización SEO avanzada',
             'Hasta 5 secciones completas',
             'Formulario de contacto',
+            'Botón de WhatsApp integrado',
             'Integración redes sociales',
             'Galería de imágenes',
             'Mapa de ubicación',
