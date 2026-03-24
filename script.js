@@ -226,25 +226,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Manejo del formulario de contacto
+    // Manejo del formulario de contacto con EmailJS
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simular envío del formulario
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const formMessage = document.getElementById('formMessage');
+            const originalText = btnText.textContent;
             
-            submitBtn.innerHTML = '<span>Enviando...</span><div class="loading"></div>';
+            // Deshabilitar botón y mostrar loading
             submitBtn.disabled = true;
-
-            // Simular delay de envío
-            setTimeout(() => {
-                alert('¡Gracias por tu mensaje! Te responderemos pronto.');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            btnText.textContent = 'Enviando...';
+            formMessage.className = 'form-message';
+            formMessage.textContent = '';
+            
+            // Preparar los parámetros del email
+            const templateParams = {
+                from_name: document.getElementById('nombre').value,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('telefono').value || 'No proporcionado',
+                service: document.getElementById('servicio').value,
+                message: document.getElementById('mensaje').value,
+                to_email: 'bunstackweb@gmail.com'
+            };
+            
+            // Enviar con EmailJS
+            emailjs.send('service_q8w3kcq', 'template_xv8majg', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = '✓ ¡Mensaje enviado con éxito! Te responderemos pronto.';
+                    contactForm.reset();
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formMessage.className = 'form-message';
+                    }, 5000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = '✗ Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.';
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    btnText.textContent = originalText;
+                });
         });
     }
 
@@ -472,5 +500,153 @@ function measurePerformance() {
         });
     }
 }
+
+// Data de servicios
+const servicesData = {
+    mantenimiento: {
+        title: 'Mantenimiento Web',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>`,
+        description: 'Mantenimiento completo y soporte técnico profesional para mantener tu sitio web siempre actualizado, seguro y funcionando perfectamente.',
+        features: [
+            'Cambio de hosting y migración',
+            'Modificaciones y actualizaciones web',
+            'Actualizaciones continuas de seguridad',
+            'Respaldos automáticos diarios',
+            'Soporte técnico prioritario',
+            'Optimización de velocidad y rendimiento',
+            'Monitoreo 24/7 del sitio',
+            'Certificado SSL incluido'
+        ],
+        price: 'Desde $149.990/mes'
+    },
+    landing: {
+        title: 'Landing Page',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>`,
+        description: 'Páginas de aterrizaje diseñadas estratégicamente para maximizar conversiones y transformar visitantes en clientes potenciales.',
+        features: [
+            'Dominio .cl incluido primer año',
+            'Hosting premium incluido',
+            'Diseño persuasivo y atractivo',
+            'Llamados a la acción efectivos',
+            'Optimización para conversiones',
+            'Botón de WhatsApp integrado',
+            'Formulario de contacto',
+            'Optimización SEO básica',
+            'Responsive 100% móvil'
+        ],
+        price: 'Desde $249.990'
+    },
+    corporativa: {
+        title: 'Páginas Web Corporativas',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M10 9l5 3-5 3V9z"/>
+        </svg>`,
+        description: 'Sitios web profesionales que proyectan la imagen de tu empresa con diseño moderno, funcionalidad completa y presencia digital sólida.',
+        features: [
+            'Dominio .cl incluido primer año',
+            'Hosting premium incluido',
+            'Diseño 100% personalizado',
+            'Optimización SEO avanzada',
+            'Hasta 5 secciones completas',
+            'Formulario de contacto',
+            'Integración redes sociales',
+            'Galería de imágenes',
+            'Mapa de ubicación',
+            'Certificado SSL incluido'
+        ],
+        price: 'Desde $399.990'
+    },
+    tienda: {
+        title: 'Tienda Online',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3h18v18H3z"/>
+            <path d="M9 8l6 4-6 4V8z"/>
+        </svg>`,
+        description: 'E-commerce completo y profesional con pasarela de pagos Webpay integrada, gestión de inventario y todas las herramientas para vender online.',
+        features: [
+            'Dominio .cl incluido primer año',
+            'Hosting premium incluido',
+            'Catálogo ilimitado de productos',
+            'Carrito de compras avanzado',
+            'Webpay Plus integrado',
+            'Panel administrable intuitivo',
+            'Gestión de inventario',
+            'Sistema de cupones y descuentos',
+            'Cálculo automático de envíos',
+            'Reportes de ventas',
+            'Integración con redes sociales',
+            'SEO optimizado'
+        ],
+        price: 'Desde $599.990'
+    }
+};
+
+// Función para abrir el modal
+function openServiceModal(serviceType) {
+    const modal = document.getElementById('serviceModal');
+    const modalBody = document.getElementById('modalBody');
+    const service = servicesData[serviceType];
+    
+    if (!service) return;
+    
+    // Construir el HTML del modal
+    const featuresHTML = service.features.map(feature => 
+        `<li>${feature}</li>`
+    ).join('');
+    
+    modalBody.innerHTML = `
+        <div class="modal-service-icon">${service.icon}</div>
+        <h2 class="modal-service-title">${service.title}</h2>
+        <p class="modal-service-description">${service.description}</p>
+        <ul class="modal-service-features">${featuresHTML}</ul>
+        <div class="modal-service-price">${service.price}</div>
+        <button class="modal-cta-button" onclick="scrollToContact()">¡Cotizar Ahora!</button>
+    `;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal
+function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Función para ir a la sección de contacto
+function scrollToContact() {
+    closeServiceModal();
+    const contactSection = document.querySelector('#contacto');
+    if (contactSection) {
+        const offsetTop = contactSection.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Cerrar modal al hacer click fuera del contenido
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('serviceModal');
+    if (e.target === modal) {
+        closeServiceModal();
+    }
+});
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeServiceModal();
+    }
+});
 
 measurePerformance();
