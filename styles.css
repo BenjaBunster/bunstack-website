@@ -1323,6 +1323,12 @@ section {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .modal-service-price {
+        font-size: 1.5rem;
+        padding: 1rem;
+        word-break: break-word;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1355,6 +1361,18 @@ section {
 
     .stat-number {
         font-size: 2.5rem;
+    }
+
+    .modal-service-price {
+        font-size: 1.2rem;
+        padding: 1rem 0.5rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        padding: 1.5rem;
     }
 }
 

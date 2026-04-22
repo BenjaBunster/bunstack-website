@@ -529,8 +529,8 @@ const servicesData = {
         </svg>`,
         description: 'Páginas de aterrizaje diseñadas estratégicamente para conversiones y visitantes de clientes potenciales.',
         features: [
-            'Dominio .cl incluido 1 año',
-            'Hosting incluido 1 año',
+            'Dominio .cl 1 año',
+            'Hosting 1 año',
             'Diseño persuasivo',
             'Llamados a la acción',
             'Optimización para conversiones',
@@ -548,8 +548,8 @@ const servicesData = {
         </svg>`,
         description: 'Sitios web profesionales, funcionalidad completa y presencia digital sólida.',
         features: [
-            'Dominio .cl incluido 1 año',
-            'Hosting incluido 1 año',
+            'Dominio .cl 1 año',
+            'Hosting 1 año',
             'Diseño 100% personalizado',
             'Optimización SEO avanzada',
             'Hasta 5 secciones completas',
@@ -569,8 +569,8 @@ const servicesData = {
         </svg>`,
         description: 'E-commerce profesional con pasarela de pagos, gestión de inventario y todas las herramientas para vender online.',
         features: [
-            'Dominio .cl incluido 1 año',
-            'Hosting incluido 1 año',
+            'Dominio .cl 1 año',
+            'Hosting 1 año',
             'Catálogo de productos',
             'Carrito de compras',
             'Webpay Plus integrado',
