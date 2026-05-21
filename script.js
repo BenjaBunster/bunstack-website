@@ -296,9 +296,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
             const originalText = heroTitle.textContent;
-            typeWriter(heroTitle, originalText, 50);
+            typeWriter(heroTitle, originalText, 25);
         }
-    }, 1000);
+    }, 300);
 
     // Parallax effect para elementos
     window.addEventListener('scroll', function() {
