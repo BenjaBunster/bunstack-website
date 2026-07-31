@@ -848,7 +848,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.3s ease;
 }
 
@@ -899,8 +899,8 @@ section {
     font-size: 0.9rem;
     display: inline-block;
     transition: all 0.3s ease;
-    transform: translateY(10px);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .portfolio-item:hover .portfolio-link {
