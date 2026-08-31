@@ -607,8 +607,6 @@ section {
 
 .modal-service-price {
     font-family: 'Orbitron', monospace;
-    font-size: 2.5rem;
-    font-weight: 900;
     color: #00ffff;
     text-align: center;
     text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
@@ -617,6 +615,22 @@ section {
     background: rgba(0, 255, 255, 0.05);
     border-radius: 15px;
     border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.modal-service-price-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.modal-service-price-note {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #d0d0d0;
+    text-shadow: none;
 }
 
 .modal-cta-button {

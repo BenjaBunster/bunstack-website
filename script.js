@@ -518,7 +518,8 @@ const servicesData = {
             'Optimización de velocidad y rendimiento',
             'Monitoreo del sitio',
         ],
-        price: 'Desde $149.990/mes'
+        price: 'Desde $99.990.-',
+        priceNote: '(+ iva si se requiere factura)'
     },
     landing: {
         title: 'Landing Page',
@@ -538,7 +539,7 @@ const servicesData = {
             'Optimización SEO',
             'Responsive 100%'
         ],
-        price: 'Desde $249.990'
+        price: 'Desde $149.990'
     },
     corporativa: {
         title: 'Páginas Web Corporativas',
@@ -559,7 +560,7 @@ const servicesData = {
             'Galería de imágenes',
             'Mapa de ubicación',
         ],
-        price: 'Desde $399.990'
+        price: 'Desde $299.990'
     },
     tienda: {
         title: 'Tienda Online',
@@ -580,7 +581,7 @@ const servicesData = {
             'Integración con redes sociales',
             'SEO optimizado'
         ],
-        price: 'Desde $599.990'
+        price: 'Desde $499.990'
     }
 };
 
@@ -602,7 +603,10 @@ function openServiceModal(serviceType) {
         <h2 class="modal-service-title">${service.title}</h2>
         <p class="modal-service-description">${service.description}</p>
         <ul class="modal-service-features">${featuresHTML}</ul>
-        <div class="modal-service-price">${service.price}</div>
+        <div class="modal-service-price">
+            <span class="modal-service-price-value">${service.price}</span>
+            ${service.priceNote ? `<span class="modal-service-price-note">${service.priceNote}</span>` : ''}
+        </div>
         <button class="modal-cta-button" onclick="scrollToContact()">¡Cotizar Ahora!</button>
     `;
     
